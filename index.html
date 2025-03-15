@@ -575,11 +575,7 @@
   <!-- Route Map Section -->
   <<!-- Route Map Section -->
 <h2>Umoja to Nairobi CBD Route</h2>
-<div class="map" width="100%" height="500px">
-
-</div>
-
-
+<div id="map" style="width: 100%; height: 500px;"></div>
   </div>
   
   <!-- Contact Section --> 
@@ -725,43 +721,44 @@
     });
   </script>
   
-     <script>
-        // Initialize the map
-        var map = L.map('map').setView([-1.286389, 36.85], 13); 
+    <script>
+  // Initialize the map
+  var map = L.map('map').setView([-1.2833, 36.8167], 13); // Centered on Nairobi
 
-        // Load OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
 
-        // Define matatu stages (with coordinates)
-        var matatuStages = [
-            { name: "Mtindwa Market", coords: [-1.2889, 36.8889] },
-            { name: "Umoja 1 Market", coords: [-1.2905, 36.8971] },
-            { name: "Umoja 2 kwa Chief", coords: [-1.2919, 36.9021] },
-            { name: "Umoja Innercore", coords: [-1.2928, 36.9056] },
-            { name: "Oloibon", coords: [-1.2915, 36.9098] },
-            { name: "Tena Estate", coords: [-1.2895, 36.8871] },
-            { name: "Donholm", coords: [-1.2865, 36.8526] },
-            { name: "City Stadium", coords: [-1.2890, 36.8372] },
-            { name: "OTC Nairobi CBD", coords: [-1.286389, 36.817223] }
-        ];
+  // Define route coordinates (Umoja to Nairobi CBD)
+  var routeCoordinates = [
+    [-1.2823, 36.8569], // Umoja
+    [-1.2841, 36.8377], // Donholm
+    [-1.2888, 36.8295], // Jogoo Road
+    [-1.2901, 36.8264], // Landhies Road
+    [-1.2833, 36.8167]  // Nairobi CBD
+  ];
 
-        // Extract coordinates for the route line
-        var routeCoordinates = matatuStages.map(stage => stage.coords);
+  // Add a polyline to represent the route
+  var routeLine = L.polyline(routeCoordinates, { color: 'red', weight: 5 }).addTo(map);
 
-        // Draw the red route line
-        L.polyline(routeCoordinates, {
-            color: 'red',
-            weight: 5
-        }).addTo(map);
+  // Add markers
+  var markers = [
+    { coords: [-1.2823, 36.8569], name: "Umoja" },
+    { coords: [-1.2841, 36.8377], name: "Donholm" },
+    { coords: [-1.2888, 36.8295], name: "Jogoo Road" },
+    { coords: [-1.2901, 36.8264], name: "Landhies Road" },
+    { coords: [-1.2833, 36.8167], name: "Nairobi CBD" }
+  ];
 
-        // Add markers with stage names
-        matatuStages.forEach(stage => {
-            L.marker(stage.coords).addTo(map)
-                .bindPopup(stage.name);
-        });
-    </script>
+  markers.forEach(marker => {
+    L.marker(marker.coords).addTo(map).bindPopup(marker.name);
+  });
+
+  // Fit map to route
+  map.fitBounds(routeLine.getBounds());
+</script>
+
 
 
 </body>
