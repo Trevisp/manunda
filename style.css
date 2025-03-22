@@ -209,7 +209,8 @@
     .gallery {
       max-width: 800px;
       margin: 20px auto;
-      display: flex;
+      display: grid;
+    grid-template-columns:repeat(2,800px);
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
@@ -223,7 +224,6 @@
     }
     .gallery img:hover {
       transform: scale(1.05);
-    }
     @media (max-width: 500px) {
       .gallery img {
         width: 100%;
