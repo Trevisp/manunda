@@ -53,8 +53,7 @@
         overlay.style.display = 'none';
       }
     });
-  </script>
-    <script>
+
     // Hide preloader after page load
     window.addEventListener('load', function () {
       document.getElementById('preloader').classList.add('hidden');
@@ -99,19 +98,39 @@
     document.getElementById('dismissBtn').addEventListener('click', function () {
       document.getElementById('alertMessage').style.display = 'none';
     });
-  </script>
+    // Initialize the map
+    var map = L.map('map').setView([-1.2833, 36.8167], 13); // Centered on Nairobi
   
-  <script>
-  // Google Map Initialization
-function initMap() {
-  const umoja = { lat: -1.286389, lng: 36.817223 };
-  const map = new google.maps.Map(document.querySelector(".map-container"), {
-    zoom: 12,
-    center: umoja,
-  });
-  new google.maps.Marker({
-    position: umoja,
-    map: map,
-    title: "Umoja Matatu Route",
-  });
-}
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+  
+    // Define route coordinates (Umoja to Nairobi CBD)
+    var routeCoordinates = [
+      [-1.2823, 36.8569], // Umoja
+      [-1.2841, 36.8377], // Donholm
+      [-1.2888, 36.8295], // Jogoo Road
+      [-1.2901, 36.8264], // Landhies Road
+      [-1.2833, 36.8167]  // Nairobi CBD
+    ];
+  
+    // Add a polyline to represent the route
+    var routeLine = L.polyline(routeCoordinates, { color: 'red', weight: 5 }).addTo(map);
+  
+    // Add markers
+    var markers = [
+      { coords: [-1.2823, 36.8569], name: "Umoja" },
+      { coords: [-1.2841, 36.8377], name: "Donholm" },
+      { coords: [-1.2888, 36.8295], name: "Jogoo Road" },
+      { coords: [-1.2901, 36.8264], name: "Landhies Road" },
+      { coords: [-1.2833, 36.8167], name: "Nairobi CBD" }
+    ];
+  
+    markers.forEach(marker => {
+      L.marker(marker.coords).addTo(map).bindPopup(marker.name);
+    });
+  
+    // Fit map to route
+    map.fitBounds(routeLine.getBounds());
+  
