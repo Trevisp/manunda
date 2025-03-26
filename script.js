@@ -98,16 +98,15 @@
     document.getElementById('dismissBtn').addEventListener('click', function () {
       document.getElementById('alertMessage').style.display = 'none';
     });
-  
-  // Initialize the map
-  var map = L.map('map').setView([-1.2833, 36.8167], 13); // Centered on Nairobi
 
-  // Add OpenStreetMap tiles
+  //map initializing 
+ document.addEventListener("DOMContentLoaded", function () {
+  var map = L.map('map').setView([-1.2833, 36.8167], 13);
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Define route coordinates (Umoja to Nairobi CBD)
   var routeCoordinates = [
     [-1.2823, 36.8569], // Umoja
     [-1.2841, 36.8377], // Donholm
@@ -116,10 +115,8 @@
     [-1.2833, 36.8167]  // Nairobi CBD
   ];
 
-  // Add a polyline to represent the route
   var routeLine = L.polyline(routeCoordinates, { color: 'red', weight: 5 }).addTo(map);
 
-  // Add markers
   var markers = [
     { coords: [-1.2823, 36.8569], name: "Umoja" },
     { coords: [-1.2841, 36.8377], name: "Donholm" },
@@ -132,6 +129,5 @@
     L.marker(marker.coords).addTo(map).bindPopup(marker.name);
   });
 
-  // Fit map to route
   map.fitBounds(routeLine.getBounds());
-
+});
