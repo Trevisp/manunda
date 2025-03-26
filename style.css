@@ -125,7 +125,6 @@
       text-align: center;
 
       margin: 20px auto;
-      padding: 10px;
     }
     .hero h1{
         font-size: 4.5rem;
@@ -174,7 +173,6 @@
     .about {
       max-width: 800px;
       margin: 20px auto;
-      padding: 20px;
       background: #fff;
       border: 5px solid #e60000;
       border-radius: 10px;
@@ -211,7 +209,6 @@
 .gallery {
   max-width: 800px;
   margin: 20px auto;
-  padding:10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
   gap: 30px;
