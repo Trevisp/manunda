@@ -1,6 +1,5 @@
-
-    /* General Styling */
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* General Styling */ 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     body {
       margin: 0;
       font-family: cursive, 'Press Start 2P';
@@ -123,24 +122,17 @@
     /* Hero Section */
     .hero {
       text-align: center;
-
       margin: 20px auto;
-padding:5px;
+      padding:5px;
     }
     .hero h1{
-        font-size: 4.5rem;
-        /* Adjust the font size, weiother text properties as needed */
-     
+      font-size: 4.5rem;
       font-weight: bolder;
       text-align: center;
-      /* Set your image as the background */
       background: url('manunda/flag-canada.jpg') no-repeat center;
       background-size: cover;
-      /* This property clips the background to the foreground text */
       -webkit-background-clip: text;
-      /* Make the text color transparent so the background shows through */
       -webkit-text-fill-color: transparent;
-      /* For browsers that support the non-webkit property (currently limited) */
       background-clip: text;
       color: transparent;
       stroke: 1px solid #e60000;
@@ -174,7 +166,7 @@ padding:5px;
     .about {
       max-width: 800px;
       margin: 20px auto;
-padding:20px;
+      padding:20px;
       background: #fff;
       border: 5px solid #e60000;
       border-radius: 10px;
@@ -211,7 +203,7 @@ padding:20px;
 .gallery {
   max-width: 800px;
   margin: 20px auto;
-padding:5px;
+  padding:5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
   gap: 30px;
@@ -410,16 +402,16 @@ padding:5px;
     }
     /* Preloader Styles */
     #preloader {
+      display: none;
       position: fixed;
       width: 100%;
       height: 100%;
-      background: #e60000; /* Brand Color */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease-out;
+      background: rgba(255, 255, 255, 0.8);
+      top: 0;
+      left: 0;
+      z-index: 9999;
     }
+
 
     /* Spinner Animation */
     .spinner {
