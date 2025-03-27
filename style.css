@@ -308,6 +308,9 @@
     }
     
     /* Map Section */
+    .map{
+        z-index:1;
+    }
     .map-container {
       text-align: center;
       margin: 20px 0;
