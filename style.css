@@ -5,17 +5,11 @@
       font-family: cursive, 'Press Start 2P';
       background-color: #f7f7f7;
       color: #000;
-      padding:10px;
     }
     main{
-        padding: 20px;
+        padding:0 10px;
+        box-sizing:border-box;
     }
-.container, .hero, .about, .contact, .reviews, .gallery {
-  margin: 20px auto;
-  padding: 15px;
-  max-width: 90%; /* Ensures it looks good on all screens */
-  box-sizing: border-box;
-}
     h1, h2 {
       color: #e60000;
       text-transform: uppercase;
