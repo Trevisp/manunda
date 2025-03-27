@@ -6,12 +6,6 @@
     function closeNav() {
       document.getElementById('mySidenav').style.width = '0';
     }
-    document.addEventListener('click', function (event) {
-  const sidenav = document.getElementById('mySidenav');
-  if (sidenav.style.width === '250px' && !sidenav.contains(event.target)) {
-    sidenav.style.width = '0';
-  }
-});
 
     // Carousel Functionality
     let carouselIndex = 0;
