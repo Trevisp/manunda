@@ -204,7 +204,7 @@
 .gallery {
   max-width: 800px;
   margin: 20px auto;
-  padding:5px;
+  padding:10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
   gap: 30px;
@@ -226,6 +226,7 @@
 @media (max-width: 500px) {
   .gallery {
     grid-template-columns: 1fr; /* One column on mobile */
+gap:15px;
   }
 }
     /* Overlay (Lightbox) Styling */
