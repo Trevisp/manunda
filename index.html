@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opposite - Kenya One </title>
+  <link rel="icon" type="png" href="oppo/canadaleaf.png"/>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for Social Media Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</head>
+<body>
+  <!-- Desktop Navbar -->
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  
+  <!-- Mobile Header (Logo on left, Hamburger on right) -->
+  <div class="mobile-header">
+    <div class="mobile-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <div class="container" onclick="toggleSidenav()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  
+  <!-- Mobile Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <div class="sidenav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!--preloader-->
+  <div id="preloader">
+    <div class="spinner">
+      <img src="oppo/canadaleaf.png" alt="Loading animation" />
+    </div>
+  </div>
+  
+  <header class="hero">
+    <h1>OPPOSITE</h1>
+    <p><strong>Nairobi's iconic matatu, bringing the streets to life!</strong></p>
+    <button type="button" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">View Gallery</button>
+  </header>
+
+<main>
+  <div class="main-container">
+  <!-- About Section -->
+  <h2 id="about">About</h2>
+  <div class="about">
+    <p>
+      Opposite Aka Manunda is a matatu known for its unique design inspired by Canada. This iconic vehicle has won the Ma3 Gala awards three times in a row. Operating on the Umoja route, it has become a popular and recognizable sight all over Nairobi.
+    </p>
+    <img src="oppo/oppo.jpg" alt="Manunda Matatu Design" /><br>
+    <a href="about.html"><button>Learn More</button></a>
+  </div>
+  
+  <!-- Gallery Section -->
+  <h2 id="gallery">Gallery</h2>
+  <div class="gallery">
+    <img src="oppo/manyanga.jpg" alt="Gallery Image 1" loading="lazy"/>
+    <img src="oppo/two.jpg" alt="Gallery Image 2" loading="lazy"/>
+    <img src="oppo/three.jpg" alt="Gallery Image 3" loading="lazy"/>
+    <img src="oppo/money.jpg" alt="Gallery Image 4" loading="lazy"/>
+  </div>
+  <div class="gly-btn">
+    <button class="btnn">View More</button>
+  </div>
+  
+  <!-- Overlay for Lightbox Effect -->
+  <div id="overlay">
+    <span id="closeOverlay">&times;</span>
+    <img id="overlayImg" src="" alt="Enlarged Gallery Image" />
+  </div>
+  
+  <!-- Reviews Section -->
+  <h2 id="reviews">Reviews</h2>
+   <div class="reviews">
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div>
+        <img src="oppo/sila.jpg" alt="Review 1" />
+        <p>Hii nganya ni deadly!</p>
+      </div>
+      <div>
+        <img src="oppo/mutua.jpg" alt="Review 2" />
+        <p>Best matatu in Nairobi, hands down!</p>
+      </div>
+      <div>
+        <img src="oppo/maincrew.jpg" alt="Review 3" />
+        <p>Kama hujapanda Manunda, haujui life!</p>
+      </div>
+      <div>
+        <img src="oppo/bestcrew.jpg" alt="Review 3" />
+        <p>Opposite ndio ma3 inasema sai!</p>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">&#8592; Previous</button>
+    <button onclick="nextSlide()">Next &#8594;</button>
+  </div>
+</div>
+</div>
+  <!-- Route Map Section -->
+<h2>Umoja to Nairobi CBD Route</h2>
+  <div class="map" id="map" style="height: 400px;"></div>
+
+
+  
+  <!-- Contact Section --> 
+  <h2 id="contact">Contact Us</h2>
+  <div class="contact">
+     
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="1b953ce0-cfd2-4fa6-b7a7-026b4d4c3d25">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <!-- Alert Message -->
+    <div class="alert" id="alertMessage">
+      <button class="dismiss-btn" id="dismissBtn">&times;</button>
+      <span id="alertText"></span>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100077211222963" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://x.com/trevis_mutua" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.instagram.com/trevor_trevis_/" title="Instagram"><i class="fab fa-instagram-square"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <img src="oppo/canadaleaf.png" alt="Logo" width="100px" />
+    <p>Designed by <a href="https://trevisp.github.io/Mutuadesigns/">Mutua Designs</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+    
+
+</body>
+</html>

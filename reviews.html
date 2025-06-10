@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manunda - Nairobi's Iconic Matatu</title>
+    <link rel="icon" type="png" href="oppo/canadaleaf.png"/>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Social Media Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<!-- Desktop Navbar -->
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  
+  <!-- Mobile Header (Logo on left, Hamburger on right) -->
+  <div class="mobile-header">
+    <div class="mobile-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <div class="container" onclick="toggleSidenav()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  
+  <!-- Mobile Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <div class="sidenav-logo">
+      <img src="manunda/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <header class="gallery-header">
+    <h1>Reviews</h1>
+    <p>What our fans Say About Us..</p>
+  </header>
+<div class="main-container">
+  <div class="reviews">
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div>
+        <img src="oppo/msila.jpg" alt="Review 1" />
+        <p>Hii nganya ni deadly!</p>
+      </div>
+      <div>
+        <img src="oppo/mutua.jpg" alt="Review 2" />
+        <p>Best matatu in Nairobi, hands down!</p>
+      </div>
+      <div>
+        <img src="oppo/maincrew.jpg" alt="Review 3" />
+        <p>Kama hujapanda Manunda, haujui life!</p>
+      </div>
+      <div>
+        <img src="oppo/bestcrew.jpg" alt="Review 3" />
+        <p>Opposite ndio ma3 inasema sai!</p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">&#8592; Previous</button>
+    <button onclick="nextSlide()">Next &#8594;</button>
+  </div>
+</div>
+  <div class="media">
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100077211222963" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://x.com/trevis_mutua" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.instagram.com/trevor_trevis_/" title="Instagram"><i class="fab fa-instagram-square"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+</div>
+</div>
+  <!-- Footer -->
+  <footer>
+    <img src="oppo/canadaleaf.png" alt="Logo" width="100px" />
+    <p>Designed by <a href="https://trevisp.github.io/Mutuadesigns/">Mutua Designs</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

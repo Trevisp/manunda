@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Opposite-Kenya One</title>
+  <link rel="icon" type="png" href="oppo/canadaleaf.png"/>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Social Media Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+ <!-- Desktop Navbar -->
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  
+  <!-- Mobile Header (Logo on left, Hamburger on right) -->
+  <div class="mobile-header">
+    <div class="mobile-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <div class="container" onclick="toggleSidenav()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  
+  <!-- Mobile Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <div class="sidenav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <header class="gallery-header">
+    <h1>Gallery</h1>
+    <p>Explore the Vibes. Lights. Crew. Awards. Streets.</p>
+  </header>
+
+  <section class="filter-section">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="exterior">Exterior</button>
+    <button class="filter-btn" data-category="interior">Interior</button>
+    <button class="filter-btn" data-category="crew">Crew</button>
+    <button class="filter-btn" data-category="awards">Awards</button>
+  </section>
+
+  <section class="gallery-main">
+    <div class="gallery-item exterior"><img src="oppo/manyanga.jpg" alt="Exterior View"></div>
+    <div class="gallery-item interior"><img src="oppo/problematic.jpg" alt="LED Lights"></div>
+    <div class="gallery-item crew"><img src="oppo/bestcrew.jpg" alt="Crew Member"></div>
+    <div class="gallery-item exterior"><img src="oppo/basic.jpg" alt="Matatu at Night"></div>
+    <div class="gallery-item awards"><img src="oppo/award.jpg" alt="Award Ceremony"></div>
+    <div class="gallery-item interior"><img src="oppo/interior.jpg" alt="Interior Shot"></div>
+    <div class="gallery-item crew"><img src="oppo/maincrew.jpg" alt="Crew in Action"></div>
+    <div class="gallery-item awards"><img src="oppo/proudcrew.jpg" alt="Trophy Display"></div>
+    <div class="gallery-item interior"><img src="oppo/mainint.jpg" alt="Trophy Display"></div>
+     <div class="gallery-item exterior"><img src="oppo/usikusacco.jpg" alt="Matatu at Night"></div>
+    
+  </section>
+
+  <section class="video-section">
+    <h2>Opposite in Action</h2>
+    <div class="video-grid">
+      <div class="video-wrapper">
+        <video src="oppo/club.mp4" controls></video>
+      </div>
+      <div class="video-wrapper">
+       <video src="oppo/beast.mp4" controls></video>
+      </div>
+       <div class="video-wrapper">
+       <video src="oppo/vibesnganya.mp4" controls></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="oppo/canadaleaf.png" alt="Logo" width="100px" />
+    <p>Designed by <a href="https://trevisp.github.io/Mutuadesigns/">Mutua Designs</a></p>
+  </footer>
+  <script src="script.js"></script>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.gallery-item');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.getAttribute('data-category');
+
+        items.forEach(item => {
+          if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

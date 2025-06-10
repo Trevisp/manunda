@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manunda</title>
+
+    <link rel="icon" type="png" href="oppo/canadaleaf.png"/>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for Social Media Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+    
+  <!-- Desktop Navbar -->
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  
+  <!-- Mobile Header (Logo on left, Hamburger on right) -->
+  <div class="mobile-header">
+    <div class="mobile-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <div class="container" onclick="toggleSidenav()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  
+  <!-- Mobile Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <div class="sidenav-logo">
+      <img src="oppo/canadaleaf.png" alt="Logo" />
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!--main content-->
+    <!--hero section-->
+    <header class="gallery-header">
+    <h1>About Us</h1>
+    <p>Kenyas best matatu.Bringing the streets to life..</p>
+  </header>
+<div class="main-container">
+    <!-- About Section -->
+  <div class="about">
+    <p>
+      Opposite Aka Manunda is a matatu known for its unique design inspired by Canada. This iconic vehicle has won the Ma3 Gala awards three times in a row. Operating on the Umoja route, it has become a popular and recognizable sight all over Nairobi.
+    </p>
+    <img src="oppo/oppo.jpg" alt="Manunda Matatu Design" /><br>
+    <a href="gallery.html"><button>View Gallery</button></a>
+  </div>
+
+  <!-- Our History -->
+<section class="our-history-section">
+  <h2>Our History</h2>
+  <div class="history">
+    <div class="hist-1">
+      <p>
+        Opposite was founded in 2019 by that time it was known as Dudu Mbaya.It managed to win the Gala Matatu awards as the best matatu in kenya.
+        From that time it has been one of the most popular matatus in Nairobi for its unique design and 
+        amazing crew.The matatu has continued to be the best matatu in Nairobi as it has won the ma3 gala awards 
+        3 times in row making history as the only matatu to do that.Opposite still continues to be one of the Nairobi finest
+        despite facing stiff competition from other matatus like Matrix,Money fest,Detox e.t.c.
+      </p>
+    </div>
+    <div class="hist-2">
+      <img src="oppo/newback.jpg" alt="Canadian Opposite">
+      <img src="oppo/wehatesense.jpg" alt="We Hate Sense">
+      <img src="oppo/ilembaya.jpg" alt="Ile Mbaya">
+    </div>
+  </div>
+</section>
+
+<!-- Our Awards -->
+<section class="awards-section">
+  <h2>Our Awards</h2>
+  <div class="awards">
+    <div class="award-one">
+      <img src="oppo/2024.jpg" alt="Kenya One 2024">
+      <p>Kenya One 2024</p>
+    </div>
+    <div class="award-one">
+      <img src="oppo/champion.webp" alt="Kenya One 2023">
+      <p>Kenya One 2023</p>
+    </div>
+    <div class="award-one">
+      <img src="oppo/2022.webp" alt="Kenya One 2022">
+      <p>Kenya One 2022</p>
+    </div>
+    <div class="award-one">
+      <img src="oppo/soundbeast.webp" alt="Sound Beast 2022">
+      <p>Sound Beast 2022</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Meet Our Crew -->
+<section class="crew-section">
+  <h2>Meet Our Crew</h2>
+  <div class="crew">
+    <div class="crew-member">
+      <img src="oppo/maincrew.jpg" alt="Crew Member 1">
+    </div>
+    <div class="crew-member">
+      <img src="oppo/bestcrew.jpg" alt="Crew Member 2">
+    </div>
+    <div class="crew-member">
+      <img src="oppo/Instagram.jpg" alt="Crew Member 3">
+    </div>
+  </div>
+</section>
+
+  <!-- Reviews Section -->
+  <h2 id="reviews">Reviews</h2>
+   <div class="reviews">
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div>
+        <img src="oppo/sila.jpg" alt="Review 1" />
+        <p>Hii nganya ni deadly!</p>
+      </div>
+      <div>
+        <img src="oppo/mutua.jpg" alt="Review 2" />
+        <p>Best matatu in Nairobi, hands down!</p>
+      </div>
+      <div>
+        <img src="oppo/maincrew.jpg" alt="Review 3" />
+        <p>Kama hujapanda Manunda, haujui life!</p>
+      </div>
+      <div>
+        <img src="oppo/bestcrew.jpg" alt="Review 3" />
+        <p>Opposite ndio ma3 inasema sai!</p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">&#8592; Previous</button>
+    <button onclick="nextSlide()">Next &#8594;</button>
+  </div>
+</div>
+</div>
+
+<div class="media">
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100077211222963" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://x.com/trevis_mutua" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.instagram.com/trevor_trevis_/" title="Instagram"><i class="fab fa-instagram-square"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+</div>
+ <!-- Footer -->
+  <footer>
+    <img src="oppo/canadaleaf.png" alt="Logo" width="100px" />
+    <p>Designed by <a href="https://trevisp.github.io/Mutuadesigns/">Mutua Designs</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
