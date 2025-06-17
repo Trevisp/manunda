@@ -477,7 +477,13 @@ gap:15px;
       left: 0;
       z-index: 9999;
     }
-
+ /* Hide Preloader After Page Loads */
+    .hidden {
+        /*
+      opacity: 0;
+      visibility: hidden;*/
+    display: none !important;
+    }
 
     /* Spinner Animation */
     .spinner {
@@ -494,11 +500,7 @@ gap:15px;
       100% { transform: rotate(360deg); }
     }
 
-    /* Hide Preloader After Page Loads */
-    .hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
+   
         /* Alert Message */
     .alert {
       display: none;
