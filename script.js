@@ -66,8 +66,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   const alertText = document.getElementById('alertText');
   const form = this;
 
-  // Show loading preloader
-  preloader.style.display = 'flex';
+  
 
   fetch(form.action, {
     method: 'POST',
