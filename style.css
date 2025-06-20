@@ -146,7 +146,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 2px white;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -588,8 +588,7 @@ gap:15px;
   padding: 20px;
   background-color: #fff;
   margin: auto;
-  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
-  border: 5px solid #e60000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
@@ -642,13 +641,17 @@ gap:15px;
 /* Responsive Styling */
 @media (max-width: 768px) {
   .awards {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .award-one {
     max-width: 100%;
   }
+.award-one img{
+    width:80px;
+    height:80px;
+}
 }
 
     .crew-section {
@@ -740,16 +743,16 @@ gap:15px;
   font-size: 3rem;
   margin-bottom: 10px;
   font-size: clamp(3rem, 10vw, 100px); /* Responsive text */
-      font-weight: bolder;
-      background: url('oppo/flag-canada.jpg') no-repeat center;
-      background-size: cover;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 2px #e60000;
-      color: transparent;
-      margin-top: 5px;
-      margin-bottom: 5px;
+  font-weight: bolder;
+  background: linear-gradient(90deg, #e60000, #ffffff); /* Red to white */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 2px #e60000;
+  color: transparent;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .gallery-header p {
@@ -903,4 +906,7 @@ gap:15px;
     width: 50px;
     height: 50px;
   }
+.gallery-header h1{
+    -webkit-text-stroke: 1px #e60000;
+}
 }
