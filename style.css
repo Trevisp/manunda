@@ -141,13 +141,12 @@
 .hero h1 {
   font-size: clamp(3rem, 10vw, 100px); /* Responsive text */
   font-weight: bolder;
-  background: url('oppo/flag-canada.jpg') no-repeat center;
-  background-size: cover;
+  background: linear-gradient(90deg, #e60000, #ffffff); /* Red to white */
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px white;
+  background-clip: text;
   color: transparent;
+  -webkit-text-stroke: 1px white;
   margin-top: 5px;
   margin-bottom: 5px;
 }
