@@ -11,23 +11,61 @@
     let carouselIndex = 0;
   const carousel = document.getElementById('carousel');
   const slides = carousel.children;
+  let autoScroll;
 
+  // Show slide based on index
   function showSlide(index) {
     carousel.style.transform = `translateX(-${index * 100}%)`;
   }
 
+  // Next slide
   function nextSlide() {
     carouselIndex = (carouselIndex + 1) % slides.length;
     showSlide(carouselIndex);
   }
 
+  // Previous slide
   function prevSlide() {
     carouselIndex = (carouselIndex - 1 + slides.length) % slides.length;
     showSlide(carouselIndex);
   }
 
-  // Initialize
-  showSlide(carouselIndex);
+  // Auto-scroll every 4 seconds
+  function startAutoScroll() {
+    autoScroll = setInterval(nextSlide, 4000);
+  }
+
+  // Reset auto-scroll timer
+  function resetAutoScroll() {
+    clearInterval(autoScroll);
+    startAutoScroll();
+  }
+
+  // Start auto-scroll on load
+  startAutoScroll();
+
+  // Mobile swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  carousel.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+      nextSlide();
+      resetAutoScroll();
+    } else if (touchEndX > touchStartX + 50) {
+      prevSlide();
+      resetAutoScroll();
+    }
+  }
     
     // Lightbox (Overlay) Functionality for Gallery
     const galleryImages = document.querySelectorAll('.gallery img');
