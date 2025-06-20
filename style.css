@@ -244,19 +244,18 @@
   text-align: center;
 }
 .btnn{
-  background: #e60000;
-      color: #fff;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 8px 15px;
-      border-radius: 5px;
-      margin: 0 5px;
-      transition: background 0.3s;
+  padding: 10px 20px;
+  border: 2px solid #e60000;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #e60000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 .btnn:hover{
-  background: #ffcccb;
-  color: #e60000;
+  background-color: #e60000;
+  color: #fff;
 }
 /* Responsive - Single column on mobile */
 @media (max-width: 500px) {
